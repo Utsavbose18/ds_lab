@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+#define SIZE 10
+
+void Push(int);
+void Pop();
+void display();
+
+
+int stack[SIZE], top= -1;
+void main()
+{
+    int value, choice;
+   
+    while(1)
+    {
+        printf("\n\n*****MENU*****\n");
+        printf("1.Push\n2. Pop\n3. Display\n4. exit");
+        printf("\n Enter your choice:");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:printf("Enter the value tobe inserted:");
+            scanf("%d",&value);
+            Push(value);
+            break;
+            case 2:Pop();
+            break;
+            case 3: display();
+            break;
+            case 4:exit(0);
+            default:printf("\n Wrong selection!!!TRy again!!!");
+            
+        }
+    
+    }
+}
+void Push(int value)
+{
+    if(top==SIZE-1)
+    printf("\n Stack is full!!! insertion is not possible");
+    else{
+        top++;
+        stack[top]=value;
+        printf("\n insertion success!!!");
+    }
+}
+void Pop()
+{
+    if(top==-1)
+    printf("\n Stack os empty!!!deletion is not possible!!!");
+    else
+    {
+        printf("\n Deleted :%d",stack[top]);
+        top--;
+    
+    }
+}
+void display()
+{
+    if(top== -1)
+    printf("\n Stack is empty!!!");
+    else{
+        int i;
+    printf("\n Stack elements are:\n");
+    
+    for(i=top;i>=0;i++)
+    printf("%d\n",stack[i]);
+}
+}
