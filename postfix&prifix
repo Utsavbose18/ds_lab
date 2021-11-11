@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<ctype.h>
+#define SIZE 50
+char stack[SIZE];
+int top=-1;
+void push(char elem)
+{
+    stack[++top]=elem;
+}
+char pop()
+{
+    return(stack[top--]);
+}
+int pr(char symbol)
+{
+    retun(3);
+}
+ekse if (symbol='*'||symbol=='/')
+{
+    return(2);
+    
+}
+else if(symbol=='+'||symbol=='_')
+{
+    return(1);
+}
+else
+{
+    return(0);
+}
+
+public stactic void main()
+{
+    char infix[50],postfix[50],ch,elem;
+    int i=0,k=0;
+    printf("enter infix expression:");
+    scanf("%s",infix);
+    push('#');
+    while((ch=infix[i++])!='\0')
+    {
+        if(ch=='c')push(ch);
+        else
+        if(islnum(ch))postfix[R++]=ch;
+        else
+        if(ch==))
+        {
+            while(stack[top] !='c')
+            postfix[R++]=pop();
+            elem=pop();
+        }
+        else
+        {
+            while(pr(stack[top])>=pr(ch))
+            postfix[R++]=pop();
+            postfix[R]='\0';
+            printf("\n postfix Exprssion=%s\n",postfix);
+        }
+    }
+}
